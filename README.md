@@ -10,8 +10,8 @@
 - [Customizing this project](#customizing-this-project)
   - [Schemas](#schemas)
   - [Stylizing](#stylizing)
-- [Deploying this project]()
-- [Resources]()
+- [Deploying this project](#deploying-this-project)
+- [Resources](#resources)
 
 ## IMPORTANT: Live Editing
 
@@ -75,9 +75,9 @@ There's two things you are going to change:
 
 ### Stylizing
 
-This project uses [`tailwindcss`](#https://tailwindcss.com/docs/installation), [`@portabletext/react`](#https://npmjs.com/package/@portabletext/react), [`react-refractor`](#https://npmjs.com/package/react-refractor).
+This project uses [`tailwindcss`](https://tailwindcss.com/docs/installation), [`@portabletext/react`](https://npmjs.com/package/@portabletext/react), [`react-refractor`](https://npmjs.com/package/react-refractor).
 
-This template is made with developers in mind. Sanity Studio is configured to used their [`@sanity/code-input`](#https://sanity.io/plugins/code-input) plugin and on the Front-end the project uses [`@portabletext/react`](#https://npmjs.com/package/@portabletext/react) to render the Portable Text content. [`@portabletext/react`](#https://npmjs.com/package/@portabletext/react) uses [`react-refractor`](#https://npmjs.com/package/react-refractor) to stylize the code in the blog (you can change the style and use a theme from [prism](#https://github.com/PrismJS/prism/tree/gh-pages/themes) or other [community themes for prism](#https://github.com/PrismJS/prism-themes))
+This template is made with developers in mind. Sanity Studio is configured to used their [`@sanity/code-input`](https://sanity.io/plugins/code-input) plugin and on the Front-end the project uses [`@portabletext/react`](https://npmjs.com/package/@portabletext/react) to render the Portable Text content. [`@portabletext/react`](https://npmjs.com/package/@portabletext/react) uses [`react-refractor`](https://npmjs.com/package/react-refractor) to stylize the code in the blog (you can change the style and use a theme from [prism](https://github.com/PrismJS/prism/tree/gh-pages/themes) or other [community themes for prism](https://github.com/PrismJS/prism-themes))
 
 Everything else is pretty standard. Basic knowlege of TailwindCSS and React will be enough to customize the Front-end.
 
@@ -89,7 +89,7 @@ Coming soon!
 
 This project followed the official documentation of each product
 
-- [Visual Editing with Next.js App Router and Sanity Studio](#https://sanity.io/guides/nextjs-app-router-live-preview)
+- [Visual Editing with Next.js App Router and Sanity Studio](https://sanity.io/guides/nextjs-app-router-live-preview)
 - [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
 - [Caching](https://turbo.build/repo/docs/core-concepts/caching)
 - [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
