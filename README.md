@@ -1,82 +1,95 @@
-# IMPORTANT: Live Editing
+# Developer Blog Template
+
+## Table of contents
+
+- [Getting started](#getting-started)
+  - [Running this project](#running-development-servers)
+  - [Quick Deployment](#quick-deployment)
+- [File structure](#file-structure)
+- [Tech stack](#tech-stack)
+- [Customizing this project](#customizing-this-project)
+  - [Schemas](#schemas)
+  - [Stylizing](#stylizing)
+- [Deploying this project]()
+- [Resources]()
+
+## IMPORTANT: Live Editing
 
 Live Editing is assembled but not working at the moment
 
-# Turborepo starter
+## Getting started
 
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
+Clone this repo and install the dependencies
 
 ```sh
-npx create-turbo@latest
+git clone https://github.com/ferlarag/developer-blog.git
+cd your-repo
+npm install
+npm run dev
 ```
 
-## What's inside?
+### Running Development Servers
 
-This Turborepo includes the following packages/apps:
+```
+npm run dev
+```
+
+This command will start the development server for both the Sanity Studio (localhost:3333) and NextJS app (localhost:3000)
+
+### Quick deployment
+
+You can deploy the NextJS app on vercel. If you don't plan on collaborating with others using the Sanity Studio, there's no need to deploy it and you'll probably be fine making changes locally.
+
+If you want others to access the Studio, then you'll need to deploy it.
+
+## File Structure
+
+This monorepo is using turbo and follows the following structure:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `apps/cms`: a [Sanity Studio](https://www.sanity.io/studio) app
+- `apps/portfolio`: a [Next.js](https://nextjs.org/) app
+- `packages/@repo/ui`: a stub React component library shared by both `web` and `docs` applications
+- `packages/eslint-config`: `eslint` configurations (includes `packages/eslint-config-next` and `eslint-config-prettier`)
+- `packages/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
+## Tech stack
 
-This Turborepo has some additional tools already setup for you:
+- NextJS
+- Sanity
+- Typescript
+- TailwindCSS
+- Shadcn
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+## Customizing this project
 
-### Build
+### Schemas
 
-To build all apps and packages, run the following command:
+There's two things you are going to change:
 
-```
-cd my-turborepo
-pnpm build
-```
+- **Schema**: the schemas are located in `apps/cms/schemas`. When you add/modify the shcema, you'll have to run the `npm run schema` (make sure you run it in the `app/cms` directory). This will grab the all the files that contain a Sanity schema object and it will generate a json file (it will be useful later for generating the types!).
+- **Queries**: the queries are located in the `app/portfolio/src/sanity/lib/queries.ts` file. Every time you add/modify a query to the `queries.ts` file, you'll need to run the `npm run generate` command (make sure you are running this command in the `apps/portfolio` directory).
 
-### Develop
+### Stylizing
 
-To develop all apps and packages, run the following command:
+This project uses [`tailwindcss`](#https://tailwindcss.com/docs/installation), [`@portabletext/react`](#https://www.npmjs.com/package/@portabletext/react), [`react-refractor`](#https://www.npmjs.com/package/react-refractor).
 
-```
-cd my-turborepo
-pnpm dev
-```
+This template is made with developers in mind. Sanity Studio is configured to used their [`@sanity/code-input`](#https://www.sanity.io/plugins/code-input) plugin and on the Front-end the project uses [`@portabletext/react`](#https://www.npmjs.com/package/@portabletext/react) to render the Portable Text content. [`@portabletext/react`](#https://www.npmjs.com/package/@portabletext/react) uses [`react-refractor`](#https://www.npmjs.com/package/react-refractor) to stylize the code in the blog (you can change the style and use a theme from [prism](#https://github.com/PrismJS/prism/tree/gh-pages/themes) or other [community themes for prism](#https://github.com/PrismJS/prism-themes))
 
-### Remote Caching
+Everything else is pretty standard. Basic knowlege of TailwindCSS and React will be enough to customize the Front-end.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## Deploying this project
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+Coming soon!
 
-```
-cd my-turborepo
-npx turbo login
-```
+## Resources
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+This project followed the official documentation of each product
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
+- [Visual Editing with Next.js App Router and Sanity Studio](#https://www.sanity.io/guides/nextjs-app-router-live-preview)
 - [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
 - [Caching](https://turbo.build/repo/docs/core-concepts/caching)
 - [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
