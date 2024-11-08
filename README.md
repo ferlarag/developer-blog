@@ -1,3 +1,7 @@
+# IMPORTANT: Live Editing
+
+Live Editing is assembled but not working at the moment
+
 # Turborepo starter
 
 This is an official starter Turborepo.
